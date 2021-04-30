@@ -17,13 +17,34 @@ echo
 echo "$USER ALL=(ALL:ALL) ALL" >> /etc/sudoers
  
 apk update && apk upgrade
-apk add --progress alpine-sdk ruby-dev libffi-dev\
-    openssl-dev readline-dev sqlite-dev \
-    autoconf bison libxml2-dev postgresql-dev \
-    libpcap-dev yaml-dev subversion git sqlite ruby-webrobots \
-    ruby-bundler zlib-dev ruby-io-console ruby-nokogiri \
-    ruby-activesupport4.2 ruby-activerecord4.2 ruby-bigdecimal \
-    ncurses ncurses-dev nmap
+apk add apk add -U --no-cache \
+        build-base \
+        ruby \
+        ruby-bigdecimal \
+        ruby-bundler \
+        ruby-io-console \
+        ruby-webrick \
+        ruby-dev \
+        libffi-dev\
+        openssl-dev \
+        readline-dev \
+        sqlite-dev \
+        postgresql-dev \
+        libpcap-dev \
+        libxml2-dev \
+        libxslt-dev \
+        yaml-dev \
+        zlib-dev \
+        ncurses-dev \
+        autoconf \
+        bison \
+        subversion \
+        git \
+        sqlite \
+        nmap \
+        libxslt \
+        postgresql \
+        ncurses
  
 gem install --no-rdoc --no-ri wirble sqlite3 bundler
  
